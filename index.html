@@ -1,0 +1,257 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>常熟理工学院</title>
+	<link rel="stylesheet" type="text/css" href="CSS/homepage.css">
+    <script type="text/javascript">    	
+    	function $(id){return document.getElementById(id);}    	
+    	function change(path){
+    	   	$("banner").style.backgroundImage="url("+path+")";
+    	}
+    	var imgs=["image/1.jpg","image/2.jpg","image/3.jpg","image/4.jpg","image/5.jpg","image/6.jpg","image/7.jpg","image/8.jpg","image/9.jpg","image/10.jpg","image/11.jpg","image/12.jpg","image/13.jpg","image/14.jpg","image/15.jpg","image/16.jpg","image/17.jpg","image/18.jpg"];
+    	var count=1;
+    	function switch1(){    		   		
+    		$("banner").style.backgroundImage="url("+imgs[count]+")";
+    		count+=1;
+    		if(count>16){
+    			count=0;
+    		}
+    	}
+    	setInterval("switch1()",3000);
+    	var count2=1;
+    	var i=2;
+    	var imgs2=["image/cc1.png","image/cc2.png","image/cc3.png"]
+    	function switch2(){    		   		
+    		$("content_l").style.backgroundImage="url("+imgs2[count2]+")";
+    		// var name="cen"+i;
+    		// $(name).style.border="3px solid rgb(112,0,5)";
+    		if(i=3)
+    			i=1;
+    		count2+=1;
+    		i+=1;
+    		if(count2>2){
+    			count2=0;
+    		}
+    	}
+    	setInterval("switch2()",3000);
+    	function func(x)
+    	{
+    		var name="cen"+x;
+    		$(name).style.border="3px solid rgb(112,0,5)";
+    		$("content_l").style.backgroundImage="url("+"image/cc"+""+x+".png)";
+    	}
+    	function func1(x)
+    	{
+    		var name="cen"+x;
+    		$(name).style.border="none";
+    	}
+    	var left1=0;    	
+    	function hMove(id,speed){    		
+    		var w=$(id).parentNode.offsetWidth;//offsetWidth=width+padding+(border-width)
+    		/*或者：
+    		var str=window.getComputedStyle($(id).parentNode,null).width;
+    		var w=parseInt(str.substring(0,str.indexOf("p")));*/
+    		if(2760+left1<=w){
+    			left1=w-1380;
+    		}
+    		left1+=speed;
+    		$(id).style.left=left1+"px";
+    	}    	
+    	//开始移动
+    	var timer=window.setInterval("hMove('gallery',-1)",20);	
+    	function run(){timer=window.setInterval("hMove('gallery',-1)",20);}
+    	function stop(){window.clearInterval(timer);}
+    	function float(id){$(id).style.display="block";}
+    	function cl(id){$(id).style.display="none";}
+    </script>
+</head>
+<body>
+	<div id="topbar">
+		<div id="topbar_l">
+			<a href="http://shpg.cslg.edu.cn/">评估之窗</a>
+			<a href="https://cas.cslg.edu.cn/cas/login?service=https%3A%2F%2Fcas.cslg.edu.cn%2F">信息门户</a>
+			<a href="https://www.cslg.edu.cn/html/sitemap.html">网站地图</a>
+			<a href="https://news.cslg.edu.cn/t/yqfk">疫情防控专题</a>
+			<a href="https://ecampus.cslg.edu.cn/">E-campus</a>
+			<a href="http://zyoa.cslg.edu.cn/seeyon/index.jsp">OA</a>
+			<a href="https://vpn.cslg.edu.cn/por/login_psw.csp?rnd=0.9325765674307109#https%3A%2F%2Fvpn.cslg.edu.cn%2F">VPN</a>
+			<a href="https://mail.cslg.edu.cn/">Email</a>
+			<a href="https://en.cslg.edu.cn/">English</a>
+		</div>
+            <div id="search">
+                    <input  type="text" style="width:160px; height:14px;" >
+            </div>
+            <div id="search_r">
+                    <input type="button" id="a" value="搜索">
+            </div>
+	</div>
+	<div id="loqobar">
+		<div id="loqobar_l">
+			<a href=""https://www.cslg.edu.cn/" >
+				<img src="image/logo.png" title="常熟理工学院" >
+			</a>
+		</div>
+		<div id="loqobar_r">
+			<img src="image/foil.png">
+		</div>
+
+	</div>
+	<div id="nav">
+		<div id="nav_l">
+			<ul>
+				<li >
+		             <a href="https://www.cslg.edu.cn/" class="alink" >学校首页</a>
+		        </li>			
+				<li >
+		             <a href="#" class="alink" >学校概况</a>
+		        </li>			
+		        <li >
+		             <a href="#" class="alink" >学校新闻</a>
+		        </li>			
+		        <li >
+		             <a href="#" class="alink" >组织机构</a>
+		        </li>			
+		        <li >
+		             <a href="#" class="alink" >科学研究</a>
+		        </li>			
+		        <li >
+		             <a href="#" class="alink" >招生就业</a>
+		        </li>			
+		        <li >
+		             <a href="#" class="alink" >合作交流</a>
+		        </li>			
+		        <li >
+		             <a href="#" class="alink" >大学文化</a>
+		        </li>			
+		        <li >
+		             <a href="https://lib.cslg.edu.cn/" class="alink" >校图书馆</a>
+		        </li>			
+		        <li >
+		             <a href="https://zp.cslg.edu.cn/" class="alink" >人才招聘
+	     	</ul>
+		</div>
+
+	</div>
+	<div id="banner" onmousemove="stop1();" onmouseout="run1();">
+	    <div id="control">
+		    <ul >
+				<li><a href="javascript:void(0);" onclick="change('image/1.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/2.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/3.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/4.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/5.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/6.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/7.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/8.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/9.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/10.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/11.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/12.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/13.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/14.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/15.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/16.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/17.jpg');">○</a></li>
+				<li><a href="javascript:void(0);" onclick="change('image/18.jpg');">○</a></li>
+		    </ul>
+	    </div>
+	</div>
+	<div id="content">
+		<h2 >理工要闻</h2>
+		<a href="http://news.cslg.edu.cn/" title="更多"><input id="button" type="button" value=">> 更多"></a>
+		<hr class="a1">
+		<hr class="a2">
+		<div id="content_l">
+		</div>
+		<div id="cen">
+			<ul>
+				<li><a id="cen1" name="1" style="background-image: url(image/c1.jpg); " onmouseover="func('1');" onmouseout="func1('1');"></a></li>
+				<li><a id="cen2" style="background-image: url(image/c2.jpg);" onmouseover="func('2'); " onmouseout="func1('2');"></a></li>
+				<li><a id="cen3" style="background-image: url(image/c3.jpg);" onmouseover="func('3');" onmouseout="func1('3');"></a></li>			
+			</ul>
+		</div>
+		<div id="content_r1">
+			<div id="content_r2">
+				<h3><a href="#">我校掀起党的十九届六中全会精神学习热潮</a> </h3>
+			</div>
+			<div id="ms">
+	            统一思想认识、明确目标方向、汇聚行动力量。
+	             <span class="time">11/16</span>
+	         </div>
+	         <div id="mr">
+			<ul>
+                <li><a href="http://news.cslg.edu.cn/index/read/id/91835" target="_blank">我校召开人大代表正式候选人与选民见面会
+                <span class="time">2021-12-03</span></a>
+				</li>
+                <li><a href="http://news.cslg.edu.cn/index/read/id/91507" target="_blank">【青春新风采】张奥林：“选定目标不emo”
+                <span class="time">2021-12-03</span>
+                 </a>
+                 </li>
+                <li> <a href="http://news.cslg.edu.cn/index/read/id/91769" target="_blank">我校举行客座教授聘任仪式暨电商产业学院人才培养方案论证会
+                <span class="time">2021-12-01</span> </a>
+                </li>
+				<li>
+                    <a href="http://news.cslg.edu.cn/index/read/id/91789" target="_blank">2021年招商银行苏州分行奖学金颁奖仪式举行
+                     <span class="time">2021-12-01</span> </a>
+                </li>
+                <li>
+                    <a href="http://news.cslg.edu.cn/index/read/id/91757" target="_blank">我校第四届“12.5要爱我”心理健康节开幕
+                    	<span class="time">2021-12-01</span></a>
+                </li>
+                    <li> <a href="http://news.cslg.edu.cn/index/read/id/91722" target="_blank">校党委理论学习中心组举行党史学习教育专题集体研讨会
+                    <span class="time">2021-11-30
+                    </span>
+                    </a>
+                </li>
+                </ul>
+	         </div>
+		</div>
+	<div id="content_bt">
+		<div id="gallery" onmousemove="stop();" onmouseout="run();">
+			<!--画廊要足够长才能实现无缝移动，如：230*6*2=2760(目前常见显示器最宽1920px)-->
+			<span id="span1" class="pics">				
+					<a href="image/b1.png"><img src="image/b1.png"></a>
+					<a href="image/b2.png"><img src="image/b2.png"></a>
+					<a href="image/b3.png"><img src="image/b3.png"></a>
+					<a href="image/b4.png"><img src="image/b4.png"></a>
+					<a href="image/b5.png"><img src="image/b5.png"></a>
+					<a href="image/b6.png"><img src="image/b6.png"></a>
+					<a href="image/b7.png"><img src="image/b7.png"></a>
+					<a href="image/b8.png"><img src="image/b8.png"></a>			
+			</span>			
+			<!--复制一个span1节点组成画廊-->
+			<script type="text/javascript">
+				var clonedNode=$("span1").cloneNode(true);
+				clonedNode.id="span2";
+				$("gallery").appendChild(clonedNode);				
+			</script>			
+		</div>
+	</div>	
+	</div>
+	<div id="float" onmousemove="float('float2');" onmouseout="cl('float2')">
+		<a href=""></a>
+	</div>
+	<div id="float1" onmousemove="float('float3');" onmouseout="cl('float3')">
+		<a href=""></a>
+	</div>
+	<div id="float2" >
+		<a href=""></a>
+	</div>
+	<div id="float3" onmousemove="float();">
+		<a href=""></a>
+	</div>
+	<div id="footer" >
+		<p>
+		 	<a href="#">联系我们</a>　|　 
+		 	<a href="#">收藏本站</a>　|　 
+		 	<a href="https://zp.cslg.edu.cn/">人才招聘</a>　|　 
+		 	<a href="">信息反馈</a>　|　
+		 	<a href="login.html" target="_blank">后台登录</a>
+	 	</p>
+	 	<p class="copy">&copy; 常熟理工学院计算机科学与工程学院</p>
+	</div>
+</body>
+</html>

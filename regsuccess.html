@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户注册</title>
+</head>
+<body>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#content{
+			height: 900px;
+			width: 800px;
+			position: relative;
+			font-size: 25px;
+		}
+		#left{
+			float: left;
+			width:530px;
+			height:900px;
+			background-image: url(image/left.jpg);
+			overflow: hidden;
+		}
+		#right{
+			width: 500px;
+			height: 300px;
+			position: absolute;
+			left: 800px;
+			top: 200px;
+		}
+	</style>
+</body>
+	<div id="content">
+		<div id="left">
+		</div>
+		<form action="regsuccess.html" method="get" >
+			<div id="right">
+				<h1 id="ss">ssdad</h1>
+			</div>
+		</form>
+	</div>
+		<script type="text/javascript">
+	function $(id){return document.getElementById(id);}
+		var loc=location.href;
+		var l=loc.length;
+		var p1=loc.indexOf("=");
+		var p2=loc.indexOf("&");
+		var id=loc.substr(p1+1,p2-p1-1);//从p1+1开始截取p2-p1-1个字符
+		// document.write("<h1>"+id+",欢迎您！</h1>");		
+		 // $('h1').innerHTML="ss";
+		 $("ss").innerHTML=id+"，你好。<br>";
+		 $("ss").innerHTML+="注册成功！";
+	</script>
+
+</html>

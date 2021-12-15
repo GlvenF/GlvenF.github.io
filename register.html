@@ -1,0 +1,133 @@
+
+
+<!--  edu_15_6_1.html -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户注册页面</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#content{
+			height: 900px;
+			width: 800px;
+			position: relative;
+			font-size: 25px;
+		}
+		#left{
+			float: left;
+			width:530px;
+			height:900px;
+			background-image: url(image/left.jpg);
+			overflow: hidden;
+		}
+		#right{
+			width: 500px;
+			height: 300px;
+			position: absolute;
+			left: 800px;
+			top: 200px;
+		}
+		#a1,#a2,#a3{
+			height:40px; 
+			width:400px; 
+			margin-bottom:20px;
+			border-radius: 5px;
+
+		}
+		#right span{
+			color: red;
+			font-size: 15px;
+			display: none;
+		}
+		#lable{
+			display: inline-block;
+			width: 190px;
+		}
+	</style>
+	<script type="text/javascript">
+		function $(id){return document.getElementById(id);}    	
+		function fun(x)
+		{
+			var p="b"+x;
+			$(p).style.display="block";
+		}
+		function fun1(x)
+		{
+			var p="b"+x;
+			$(p).style.display="none";
+		}
+		function checkUsername(){
+			var str = $("a1").value;
+			var fs = $("a1").value.charAt(0);
+			if(str.length!=0&&((fs>=0&&fs<=9)||str.length<6||str.length>20))
+			{	
+				alert("用户名输入错误,请重新输入");
+				$("a1").value="";
+			}
+
+		}
+		function checkPassword(){
+			var str = $("a2").value;
+            if(str.length!=0&&(str.length<6||str.length>10))
+            {
+                alert("密码输入错误,请重新输入");
+                $("a2").value="";
+            } 
+		}
+		function checkPassword_2(){
+			var str1 = $("a2").value;
+			var str2 = $("a3").value;
+            if(str1!=str2)
+            {
+                alert("密码不一致");
+                $("a2").value="";
+                $("a3").value="";
+            } 
+		}
+		function check()
+		{
+			var str1 = $("a1").value;
+			var str2 = $("a2").value;
+			var str3 = $("a3").value;
+			if(str1.length==0||str2.length==0||str3.length==0)
+			{
+				alert("请确认用户名和密码是否输入正确！");
+				return false;
+			}
+			return true;
+		}
+		function clearInfo()
+		{
+			var flag = confirm("确认要重置数据吗？");
+			if(flag==true)
+			{
+				$("a1").value = "";
+				$("a2").value = "";
+				$("a3").value = "";
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="content">
+		<div id="left">
+		</div>
+		<form action="regsuccess.html" method="get" >
+			<div id="right">
+				<h1 style="font-family:'微软雅黑'">欢迎注册账号</h1><br>
+				<input type="text" id="a1" name="myname" placeholder="昵称" onfocus="fun('1');" onblur="fun1('1');checkUsername()"><br>
+				<span id="b1">用户名不能以数字开头<br>用户名大于等于 6 个字符、小于等于 20 个字符</span><br>
+				<input type="password" id="a2" name="mypassword"  placeholder="密码" onfocus="fun('2');" onblur="fun1('2');checkPassword()"><br>
+				<span id="b2">密码大于等于 6 个字符、小于等于 10 个字符</span><br>
+				<input type="password" id="a3" name="mypassword2" placeholder="确认密码" onblur="checkPassword_2()"><br>
+				<input type="submit" style="width:100px ;height: 35px;" value="用户注册" onclick="return check()"><label id="lable"></label>
+				<input type="reset" style="width:100px ;height: 35px;" value="重置" onclick="clearInfo()">
+			</div>
+		</form>
+	</div>
+</body>
+</html>
