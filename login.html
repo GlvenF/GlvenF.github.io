@@ -29,5 +29,19 @@
 	    地址：江苏省常熟市南三环路99号（东湖校区） 湖山路99号（东南校区） 邮编：215500
 	  	</p>
 	</div>
+	<script type="text/javascript">
+		function $(id){return document.getElementById(id);} 
+		function check()
+		{	
+			var str1 = $("a1").value;
+			var str2 = $("a2").value;
+			if(str1.length==0||str2.length==0)
+			{
+				alert("输入不能为空！");
+				return false;
+			}
+			return true;
+		}
+	</script>
 </body>
 </html>
